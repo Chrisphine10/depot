@@ -1,0 +1,15 @@
+current directory: /home/jexi/Desktop/rails/depot/vendor/bundle/gems/bindex-0.8.1/ext/skiptrace
+/usr/bin/ruby2.3 -r ./siteconf20200715-9018-nol5dy.rb extconf.rb
+creating Makefile
+
+current directory: /home/jexi/Desktop/rails/depot/vendor/bundle/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /home/jexi/Desktop/rails/depot/vendor/bundle/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.so
+
+current directory: /home/jexi/Desktop/rails/depot/vendor/bundle/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20200715-9018-y0f183/skiptrace/internal

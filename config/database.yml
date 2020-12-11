@@ -9,6 +9,7 @@
 # And be sure to use new-style password hashing:
 #   https://dev.mysql.com/doc/refman/5.7/en/password-hashing.html
 #
+<<<<<<< HEAD
 #default: &default
 #  adapter: mysql2
 #  encoding: utf8mb4
@@ -17,6 +18,16 @@
  # password:
 #  host: localhost
  # port: 3306
+=======
+default: &default
+  adapter: mysql2
+  encoding: utf8mb4
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: bd1e5c5d5030df
+  password: f7788b6a
+  host: localhost
+  port: 3306
+>>>>>>> 2da240b28ab46fa51ca033e34855c1e3da932848
 
 #development:
 #  <<: *default

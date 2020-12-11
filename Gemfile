@@ -11,7 +11,7 @@ gem 'jquery-ui-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
-gem 'mysql2'
+gem 'pg', '~> 0.18.4'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'rails-controller-testing'

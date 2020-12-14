@@ -38,13 +38,12 @@
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-#development:
- # adapter: postgresql
- # encoding: unicode
-  #pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  #database: depot_store_development
-  #username: root
-  #password: 12345678
+development:
+  adapter: mysql2
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  database: depot_store_development
+  username: root
+  password: 12345678
 
 default: &default
  adapter: postgresql

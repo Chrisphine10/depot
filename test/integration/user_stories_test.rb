@@ -13,23 +13,23 @@ class UserStoriesTest < ActionDispatch::IntegrationTest
      start_order_count = Order.count
      ruby_book = products(:ruby)
 
-     get "/"
+     get root_path
      assert_response :success
      assert_select 'h1', "Your Pragmatic Catalog"
 
-     post '/line_items', params: { product_id: ruby_book.id }, xhr: true
+     post line_items_path, params: { product_id: ruby_book.id }, xhr: true
      assert_response :success
 
      cart = Cart.find(session[:cart_id])
      assert_equal 1, cart.line_items.size
      assert_equal ruby_book, cart.line_items[0].product
 
-     get "/orders/new"
+     get new_order_url
      assert_response :success
      assert_select 'legend', 'Please Enter Your Details'
 
      perform_enqueued_jobs do
-       post "/orders", params: {
+       post orders_url, params: {
          order: {
            name: "Dave Thomas",
            address: "123 The Street",

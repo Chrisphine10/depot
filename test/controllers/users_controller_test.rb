@@ -25,7 +25,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should show user" do
-    get user_url(@user)
+    get user_path(@user)
     assert_response :success
   end
 
@@ -41,7 +41,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
   test "should destroy user" do
     assert_difference('User.count', -1) do
-      delete user_url(@user)
+      delete_user_path(@user)
     end
 
     assert_redirected_to users_url

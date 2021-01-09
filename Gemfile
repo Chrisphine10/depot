@@ -1,5 +1,9 @@
 source 'http://rubygems.org'
 
+gem 'capistrano-rails', group: :development
+gem 'capistrano-rvm', group: :development
+gem 'capistrano-bundler', group: :development
+gem 'capistrano-passenger', group: :development
 
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'puma', '~> 4.1'

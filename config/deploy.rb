@@ -1,21 +1,18 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.15.0"
-
+server = "34.105.185.143", :web, :app, :db, primary: true
 # be sure to change these values
-user = 'Chrisphine'
+user = 'ondiekchrisphine'
 domain = '34.71.77.6'
 # adjust if you are using RVM, remove if you are not
 set :rvm_type, :system
 set :rvm_ruby_string, 'ruby-2.4.1/'
 # file paths
 set :application, 'depot'
-set :repo_url, "#{user}@#{domain}:git/#{fetch(:application)}.git"
+set :repo_url, "git@github.com:Chrisphine10/#{application}.git"
 set :deploy_to, "/home/#{user}/deploy/#{fetch(:application)}"
 # distribute your applications across servers (the instructions below put them
 # all on the same server, defined above as 'domain', adjust as necessary)
-role :app, domain
-role :web, domain
-role :db, domain
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp

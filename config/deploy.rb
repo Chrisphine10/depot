@@ -1,9 +1,9 @@
 # Change these
-server '35.246.80.61', port: your_port_num, roles: [:web, :app, :db], primary: true
+server '35.246.80.61', port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:Chrisphine10/depot.git'
 set :application,     'depot'
-set :user,            'deploy'
+set :user,            'depot'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
 
@@ -24,7 +24,7 @@ set :puma_worker_timeout, nil
 set :puma_init_active_record, true  # Change to false when not using ActiveRecord
 
 ## Defaults:
-# set :scm,           :git
+#set :scm,           :git
 # set :branch,        :master
 # set :format,        :pretty
 # set :log_level,     :debug

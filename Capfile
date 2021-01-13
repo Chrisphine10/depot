@@ -1,3 +1,4 @@
+lock '3.15.0'
 # Load DSL and set up stages
 require "capistrano/setup"
 
@@ -12,6 +13,7 @@ require "capistrano/deploy"
 # require "capistrano/scm/svn"
 # install_plugin Capistrano::SCM::Svn
 # or
+
 require "capistrano/scm/git"
 install_plugin Capistrano::SCM::Git
 
@@ -33,9 +35,16 @@ install_plugin Capistrano::SCM::Git
 # require "capistrano/rails/assets"
 # require "capistrano/rails/migrations"
 # require "capistrano/passenger"
-require 'capistrano/rails'
-require 'capistrano/bundler'
-require 'capistrano/rvm'
-require 'capistrano/puma'
+
+require "capistrano/rails"
+#require 'capistrano/rails/migrations'
+require "capistrano/bundler"
+require "capistrano/rvm"
+#require 'capistrano/puma/nginx'
+require "capistrano/puma"
+install_plugin Capistrano::Puma
+
+#install_plugin Capistrano::Puma::Workers
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
+
 Dir.glob("lib/capistrano/tasks/*.rake").each { |r| import r }

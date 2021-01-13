@@ -1,9 +1,12 @@
 source 'http://rubygems.org'
 
-gem 'capistrano-rails', group: :development
-gem 'capistrano-rvm', group: :development
-gem 'capistrano-bundler', group: :development
-gem 'capistrano-passenger', group: :development
+group :development, :production do
+    gem 'capistrano',         require: false
+    gem 'capistrano-rvm',     require: false
+    gem 'capistrano-rails',   require: false
+    gem 'capistrano-bundler', require: false
+    gem 'capistrano3-puma',   require: false
+end
 
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'puma', '~> 4.1'

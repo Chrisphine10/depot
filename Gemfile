@@ -19,6 +19,15 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'mysql2'
+
+#gem 'rbnacl', '< 5.0', :require => false                                                                                                                                                                
+#gem 'rbnacl-libsodium', :require => false                                                                                                                                                               
+#gem 'bcrypt_pbkdf', '< 2.0', :require => false
+
+gem 'net-ssh', '>= 6.0.2'
+gem 'ed25519', '>= 1.2', '< 2.0'
+gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'rails-controller-testing'

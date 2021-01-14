@@ -95,7 +95,12 @@ namespace :nginx do
     end
   end
 end
-
+namespace :log do
+  desc "Watch tailf environment log"
+  task :tailf do
+    stream("tailf /depot/apps/#{application}/current/log/#{stage}.log")
+  end
+end
 # ps aux | grep puma    # Get puma pid
 # kill -s SIGUSR2 pid   # Restart puma
 # kill -s SIGTERM pid   # Stop puma

@@ -38,6 +38,7 @@ install_plugin Capistrano::SCM::Git
 
 require "capistrano/rails"
 require 'capistrano/rails/db'
+require 'capistrano/rails/logs'
 require "capistrano/rvm"
 require "capistrano/bundler"
 #require 'capistrano/puma/nginx'

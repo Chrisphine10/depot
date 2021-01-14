@@ -6,6 +6,7 @@ group :development, :production do
     gem 'capistrano-rails',   require: false
     gem 'capistrano-bundler', require: false
     gem 'capistrano3-puma',   require: false
+    gem 'capistrano-rails-db'
 end
 
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'

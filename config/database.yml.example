@@ -43,7 +43,7 @@ development:
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   database: depot_store_development
   username: root
-  password: 
+  password: 12345678
 
 test:
   adapter: mysql2

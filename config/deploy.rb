@@ -74,7 +74,6 @@ set :linked_files, %w{config/database.yml}
 ## Linked Files & Directories (Default None):
 # set :linked_files, %w{config/database.yml}
 # set :linked_dirs,  %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
-execute :sudo, "bundle exec rake assets:precompile"
 
 namespace :nginx do
   desc 'setup config for nginx server ( how to use: cap stage_environment nginx:set_config )'
@@ -85,6 +84,7 @@ namespace :nginx do
       execute :sudo, "ln -s #{fetch(:deploy_to)}/shared/config/nginx.conf /etc/nginx/sites-enabled/#{fetch(:application)}.conf"
       execute :sudo, "/usr/sbin/nginx -s quit || true"
       execute :sudo, "/usr/sbin/nginx"
+      execute :sudo, "bundle exec rake assets:precompile"
     end
   end
 

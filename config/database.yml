@@ -1,35 +1,23 @@
-#  database: depot_store_test
-
-# As with config/credentials.yml, you never want to store sensitive information,
-# like your database password, in your source code. If your source code is
-# ever seen by anyone, they now have access to your database.
-#
-# Instead, provide the password as a unix environment variable when you boot
-# the app. Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
-# for a full rundown on how to provide these environment variables in a
-# production deployment.
-#
-# On Heroku and other platform providers, you may have a full connection URL
-# availa
 development:
-  <<: *default
+  adapter: mysql2
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   database: depot_store_development
-
+  username: root
+  password: 12345678
 
 test:
-  <<: *default
-  database: depot_store_test
-
-default: &default
   adapter: mysql2
-  encoding: utf8
-  host: localhost
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %> 
-  socket: /va/run/mysqld.sock
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  database: depot_store_test
   username: root
-  password:
- 
+  password: 12345678
+
 production:
-  <<: *default
+ #database: <%= ENV['DATABASE_URL'] %>
+  adapter: mysql2
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: localhost
   database: depot_store_production
-  
+  username: root
+  password: 12345678
+

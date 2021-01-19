@@ -35,7 +35,7 @@ lock "~> 3.15.0"
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
 # Change these
-server '35.246.80.61', port: 22, user: 'depot',  roles: [:web, :app, :db], primary: true
+server '35.222.254.157', port: 22, user: 'depot',  roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:Chrisphine10/depot.git'
 set :application,     'depot'
@@ -98,7 +98,7 @@ end
 namespace :log do
   desc "Watch tailf environment log"
   task :tailf do
-    stream("tailf /depot/apps/#{application}/current/log/#{stage}.log")
+    stream("tail -f /depot/apps/#{application}/current/log/#{stage}.log")
   end
 end
 # ps aux | grep puma    # Get puma pid

@@ -49,18 +49,32 @@
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 development:
-  adapter: postgresql
-  encoding: unicode
+  adapter: mysql2
+  encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   database: depot_store_development
   username: root
   password: 12345678
+  port: 3306
+  host: localhost
 
-default: &default
-  adapter: postgresql
-  encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  
 production:
-  <<: *default
-  database: <%= ENV['DATABASE_URL'] %>
+  adapter: mysql2
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  database: depot_store_production
+  username: root
+  password: 12345678
+  port: 3306
+  host: localhost
+
+test:
+  adapter: mysql2
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  database: depot_store_test
+  username: root
+  password: 12345678
+  port: 3306
+  host: localhost
+

@@ -65,6 +65,7 @@ set :puma_init_active_record, true  # Change to false when not using ActiveRecor
 set :rvm_type, :user
 #set :rvm_type, :user  # Literal ":user"
 #set :rvm_ruby_version, 'ruby-2.6.5'
+set :rvm_map_bins, %w{gem rake ruby rails bundle}
 set :linked_files, %w{config/database.yml}
 
 

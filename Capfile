@@ -44,9 +44,9 @@ require "capistrano/bundler"
 #require 'capistrano/puma/nginx'
 #require 'capistrano/rails/assests'
 require "capistrano/puma"
-install_plugin Capistrano::Puma
+#install_plugin Capistrano::Puma
 install_plugin Capistrano::Puma::Daemon
-#install_plugin Capistrano::Puma::Workers
+install_plugin Capistrano::Puma::Workers
 
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
 

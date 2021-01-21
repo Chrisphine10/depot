@@ -62,7 +62,8 @@ set :ssh_options,     { forward_agent: true }
 set :puma_preload_app, true
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true  # Change to false when not using ActiveRecord
-#set :rvm_type, :user
+set :rvm_type, :user
+#set :rvm_type, :user  # Literal ":user"
 #set :rvm_ruby_version, 'ruby-2.6.5'
 set :linked_files, %w{config/database.yml}
 
